@@ -19,7 +19,7 @@ This project is a fully functional and responsive image gallery that allows auth
 
 - Create a web application that allows users to view different photos.
 - Simple Authentication
-- Users can log in with the following credentials:(Username: user@example.com ,Password: 1Password)
+- Users can log in with the following credentials:[Username: user@example.com ,Password: 1Password]
 - Authentication form fields have should have a proper validation setup and error messages to handle the form errors.
 
 ## Image Display
