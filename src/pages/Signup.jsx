@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Card, Button, Form, Alert } from "react-bootstrap";
 import { createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/Signup.css";
 import { auth } from "../Firebase";
 
@@ -12,6 +12,7 @@ export default function Signup() {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
   const [user, setUser] = useState({})
+  const navigate = useNavigate()
 
   // onAuthStateChanged(auth, (currentUser)=>{
     // if(!currentUser){}
@@ -38,6 +39,8 @@ export default function Signup() {
       setLoading(true)
       const user = await createUserWithEmailAndPassword(auth, email, password, confirmPassword);
       console.log(user);
+      alert('Account created successfully')
+      navigate("/")
     } catch(error){
       setError("Failed to create an account")
     }
@@ -51,19 +54,19 @@ export default function Signup() {
           <h2 className="text-center mb-4">Sign Up</h2>
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={Register}>
-            <Form.Group controlId="formBasicEmail">
+            <Form.Group controlId="Email">
               <Form.Label>
                 <b>Email:</b>
               </Form.Label>
               <Form.Control type="email" onChange={(e) => setEmail(e.target.value)} required />
             </Form.Group>
-            <Form.Group controlId="formBasicEmail">
+            <Form.Group controlId="Password">
               <Form.Label>
                 <b>Password:</b>
               </Form.Label>
               <Form.Control type="Password" onChange={(e) => setPassword(e.target.value)} required />
             </Form.Group>
-            <Form.Group controlId="formBasicEmail">
+            <Form.Group controlId="ConfirmPassword">
               <Form.Label>
                 <b>Confirm Password:</b>
               </Form.Label>
@@ -79,7 +82,7 @@ export default function Signup() {
       <div disabled={loading} className="w-100 text-center mt-2">
         <h4>
           Already have an account?
-          <Link to='/Signin'>Log In</Link>
+          <Link to='/'>Log In</Link>
         </h4>
       </div>
     </div>

@@ -37,9 +37,11 @@ export default function Navbar() {
         <div><Search/></div>
         {/* <div>{user?.email}</div> */}
         <div className="d-flex gap-3">
-          <Link to="/">
-          <button className="bg-primary button-1">Signin</button>
-          </Link>
+          {/* <Link to="/Signup"> */}
+          <button className="bg-primary button-1" onClick={() => {
+                navigate("/Signup");
+              }}>Signup</button>
+          {/* </Link> */}
           <button className="bg-primary button-2" onClick={logout}>Logout</button>
         </div>
       </nav>

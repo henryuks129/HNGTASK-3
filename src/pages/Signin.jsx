@@ -32,7 +32,7 @@ export default function Signin() {
             <h2 className="text-center mb-4">Sign In</h2>
             {error && <Alert variant="danger">{error}</Alert>}
             <Form onSubmit={login}>
-              <Form.Group controlId="formBasicEmail">
+              <Form.Group controlId="Email">
                 <Form.Label>
                   <b>Email:</b>
                 </Form.Label>
@@ -42,7 +42,7 @@ export default function Signin() {
                   required
                 />
               </Form.Group>
-              <Form.Group controlId="formBasicEmail">
+              <Form.Group controlId="Password">
                 <Form.Label>
                   <b>Password:</b>
                 </Form.Label>
@@ -58,6 +58,11 @@ export default function Signin() {
             </Form>
           </Card.Body>
         </Card>
+        <div className="w-100 text-center mt-2">
+        <h4>
+          Need an account?<Link href="/Signup"> Sign Up Here!</Link>
+        </h4>
+      </div>
       </div>
     </div>
   );
