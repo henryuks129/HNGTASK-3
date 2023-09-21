@@ -48,6 +48,9 @@ Responsiveness: The design is responsive across various desktop screens, includi
 User Experience: The design is intuitive, appealing, and encourages easy navigation and operation without lagging.
 Image Display: All images have consistent spacing and sizing for a polished appearance.
 
+## API Intergration
+
+- The api used for this application was created locally in a DB.jsx file and it contains the images used for this application, the title and the tags. 
 ## Technologies Used
 
 - React
@@ -67,7 +70,7 @@ Image Display: All images have consistent spacing and sizing for a polished appe
 
 - Git bash
 - Copy code
-- git clone (https://github.com/henryuks129/drag-and-drop-image-gallery.git) into a new folder that you have created using (mkdir "directory-name") in your git bash
+- git clone (https://github.com/henryuks129/HNGTASK-3.git) into a new folder that you have created using (mkdir "directory-name") in your git bash
 
 Change to the project directory:
 

@@ -41,12 +41,10 @@ export default function Footer() {
             </div>
             </div>
           </div>
-          <div className='text-white'>
+          <div className='text-white footer-contact text-center'>
             <h4>Need Help?</h4>
             <p className=''>
-              <span className='text-decoration-underline'>+234 907 466 6655</span>
-              <span className=''> or</span></p>
-              <p className='text-decoration-underline'>help@jazzyburger.com</p>
+              <span className='text-decoration-underline'>+234 903 861 2425</span></p>
           </div>
           <div className='text-white text-center'>
           <h4>FOLLOW US</h4>
@@ -59,7 +57,7 @@ export default function Footer() {
           </div>
       </div>
       <div className='text-center text-white'>
-      <p>Copyright &copy; {year}.  Developed by our Henryuks</p>
+      <p>Copyright &copy; {year}.  Developed by Henryuks</p>
       </div>
     </div>
     </div>

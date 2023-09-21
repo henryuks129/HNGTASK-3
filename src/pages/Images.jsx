@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { data } from "../DB";
 import "../styles/Images.css";
+import ClipLoader from "react-spinners/ClipLoader";
 
 export default function Images() {
   const [images, setImages] = useState(data);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   function handleOnDragEnd(result) {
     if (!result.destination) return;
@@ -15,13 +16,29 @@ export default function Images() {
     items.splice(result.destination.index, 0, updatedItem);
     setImages(items);
     console.log(result);
-    setLoading(true);
+    // setLoading(true);
   }
+
+  // const onDragEnd = (event) => {
+  //   const srcElement = event?.srcElement || {};
+  //   console.log("onDragEnd", event);
+  // }
+
+  useEffect(() => {
+    setTimeout(() => {
+      const newData = data;
+      setImages(newData);
+      setLoading(false);
+    }, 2000);
+  }, []);
+
   return (
     <div className="container">
       <div className="row">
         <div className="mt-3 mb-3">
-          <h1 className="text-center"><strong>Welcome to IMAGE GALLERIA.</strong></h1>
+          <h1 className="text-center">
+            <strong>Welcome to ANTIQUE GALLERIA.</strong>
+          </h1>
           <div className="mt-4 mb-4">
             <p>
               where you can admire the masterpieces of some of the most
@@ -45,62 +62,68 @@ export default function Images() {
           </div>
         </div>
         <div>
-          <div>
-            {loading && <p>loading...</p>}
-            <DragDropContext onDragEnd={handleOnDragEnd}>
-              <Droppable droppableId="pictures">
-                {(provided) => (
-                  <div
-                    ref={provided.innerRef}
-                    {...provided.droppableProps}
-                    className=""
-                    style={{
-                      display: `grid`,
-                      gridTemplateColumns: `repeat(4,1fr)`,
-                      gap: "12px",
-                    }}
-                  >
-                    {images.map((datum, index) => {
-                      const { id, Name, tag, url } = datum;
+          <div className="d-flex justify-content-center align-items-center">
+            {loading ? (
+              <ClipLoader
+                size={150}
+                aria-label="Loading Spinner"
+                data-testid="loader"
+              />
+            ) : (
+              <DragDropContext onDragEnd={handleOnDragEnd}>
+                <Droppable droppableId="pictures">
+                  {(provided) => (
+                    <div
+                      ref={provided.innerRef}
+                      {...provided.droppableProps}
+                      className="mt-3 mb-3 row"
+                      //   style={{
+                      //     display: `grid`,
+                      //     gridTemplateColumns: `repeat(4,1fr)`,
+                      //     gap: "12px",
+                      //   }}
+                    >
+                      {images.map((datum, index) => {
+                        const { id, Name, tag, url } = datum;
 
-                      return (
-                        <Draggable key={id} draggableId={id} index={index}>
-                          {(provided) => (
-                            <div
-                              ref={provided.innerRef}
-                              {...provided.draggableProps}
-                              {...provided.dragHandleProps}
-                              className=""
-                              style={{ borderRadius: "15px" }}
-                            >
-                              <div className="image-body">
-                                <img
-                                  src={url}
-                                  alt={`${Name} of the painting`}
-                                  // className="h-100"
-                                  width={270}
-                                  height={300}
-                                  style={{ borderRadius: "15px" }}
-                                />
-                                <div className="tag-text">
-                                  <button className="tag-btn">
-                                    Tag: {tag}
-                                  </button>
+                        return (
+                          <Draggable key={id} draggableId={id} index={index}>
+                            {(provided) => (
+                              <div
+                                ref={provided.innerRef}
+                                {...provided.draggableProps}
+                                {...provided.dragHandleProps}
+                                className="image-provider-body col-xl-3 col-lg-4 col-md-6"
+                                style={{ borderRadius: "15px", width: "" }}
+                              >
+                                <div className="image-body">
+                                  <img
+                                    src={url}
+                                    alt={`${Name} of the painting`}
+                                    className="img-fluid image"
+                                   
+                                    style={{ borderRadius: "15px" }}
+                                  />
+                                  <div className="tag-text">
+                                    <button className="tag-btn">
+                                      {tag}
+                                    </button>
+                                  </div>
+                                </div>
+                                <div>
+                                  <h6>{Name}</h6>
                                 </div>
                               </div>
-                              <div>
-                                <h6>{Name}</h6>
-                              </div>
-                            </div>
-                          )}
-                        </Draggable>
-                      );
-                    })}
-                    {provided.placeholder}
-                  </div>
-                )}
-              </Droppable>
-            </DragDropContext>
+                            )}
+                          </Draggable>
+                        );
+                      })}
+                      {provided.placeholder}
+                    </div>
+                  )}
+                </Droppable>
+              </DragDropContext>
+            )}
           </div>
         </div>
       </div>

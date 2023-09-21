@@ -1,0 +1,7 @@
+@media screen and (max-width: 575px) {
+    .nav-body{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+}
