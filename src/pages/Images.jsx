@@ -16,6 +16,7 @@ export default function Images() {
     items.splice(result.destination.index, 0, updatedItem);
     setImages(items);
     console.log(result);
+    console.log(items);
     // setLoading(true);
   }
 
@@ -94,7 +95,7 @@ export default function Images() {
                                 {...provided.draggableProps}
                                 {...provided.dragHandleProps}
                                 className="image-provider-body col-xl-3 col-lg-4 col-md-6"
-                                style={{ borderRadius: "15px", width: "" }}
+                                // style={{ borderRadius: "15px", width: "" }}
                               >
                                 <div className="image-body">
                                   <img

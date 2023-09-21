@@ -8,11 +8,11 @@ This project is a fully functional and responsive image gallery that allows auth
 
 ## Table of Contents
 
-- [Requirements for this Application](#Requirements)
-- [Image Display](#Image-Dispaly)
-- [API Integration](#api-integration)
-- [Error Handling](#error-handling)
-- [Getting Started](#getting-started)
+- [Requirements for this Application] (#Requirements)
+- [Image Display] (#Image-Dispaly)
+- [API Integration] (#api-integration)
+- [Error Handling] (#error-handling)
+- [Installation](#installation)
 - [Deployment](#deployment)
 
 ## Requirements for this Application
@@ -29,28 +29,23 @@ Add a tag to each image for easy identification.
 Ensure consistent spacing and sizing of images for a polished appearance.
 Loading State
 Implement a loading state for when images are not ready for display.
-Display a skeleton loader or loading spinner when loading is true to indicate ongoing data retrieval.
-Search Functionality
-Include a search field that allows users to filter the image list based on tags associated with the images.
+Display a loading spinner when loading is true to indicate ongoing data retrieval.
+Include a search field that allows users to filter the image list based on tags.
 Enhance the user experience by enabling quick access to specific images.
-Drag-and-Drop
+
+## Drag-and-Drop
+
 Implement the ability for authenticated users to drag and drop images within the gallery.
 Ensure smooth and intuitive drag-and-drop interactions.
 Provide visual cues and animations to enhance user feedback during the process.
 Responsive Design
-Ensure that the gallery is responsive and functions seamlessly on various devices, including desktop screens, mobile phones, and tablets.
 Design Flexibility
 While adhering to the above requirements, exercise creative freedom to design a unique and visually appealing user interface.
-Acceptance Criteria
-Functional Authentication: A fully functional authentication process is in place.
-Drag-and-Drop Feature: A fully functional drag-and-drop feature is implemented.
-Responsiveness: The design is responsive across various desktop screens, including mobile and tablet screens.
-User Experience: The design is intuitive, appealing, and encourages easy navigation and operation without lagging.
-Image Display: All images have consistent spacing and sizing for a polished appearance.
 
 ## API Intergration
 
-- The api used for this application was created locally in a DB.jsx file and it contains the images used for this application, the title and the tags. 
+- The api used for this application was created locally in a DB.jsx file and it contains the images used for this application, the title and the tags
+
 ## Technologies Used
 
 - React
@@ -70,32 +65,33 @@ Image Display: All images have consistent spacing and sizing for a polished appe
 
 - Git bash
 - Copy code
-- git clone (https://github.com/henryuks129/HNGTASK-3.git) into a new folder that you have created using (mkdir "directory-name") in your git bash
+- git clone [https://github.com/henryuks129/HNGTASK-3.git] into a new folder that you have created using (mkdir "directory-name") in your git bash
 
-Change to the project directory:
+- Change to the project directory:
 
-bash
-Copy code
-cd drag-and-drop-image-gallery
-Install dependencies:
+- bash
+- Copy code
+- cd name-of-directory
+- Install dependencies:
 
-bash
-Copy code
-npm install
-Start the development server:
+- bash
+- Copy code
+- npm install
+
+## Start the development server
 
 bash
 Copy code
 npm run dev
-Open your web browser and navigate to http://localhost:3000 to access the application.
+Open your web browser and navigate to (your localhost) to access the application.
 
-Usage
-Log in using the following credentials:
+## Usage
 
-Username: user@example.com
-Password: 1Password
-Explore the image gallery, drag and drop images, use the search functionality to filter images by tags, and enjoy the responsive design.
+## Log in using the following credentials
 
-Acknowledgments
-This project is based on a coding challenge and is intended for educational purposes.
-Special thanks to the creators and contributors of Vite, React, React DnD, and the chosen authentication solution.
+- Username: [user@example.com]
+- Password: 1Password
+
+## Deployment
+
+- This application was deployed in vercel

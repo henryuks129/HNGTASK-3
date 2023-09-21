@@ -22,6 +22,10 @@
     height: 300px;
 }
 
+.image-provider-body{
+    border-radius: 15px;
+}
+
 @media screen and (max-width: 767px) {
     .image-body {
         /* width: 300px; */
