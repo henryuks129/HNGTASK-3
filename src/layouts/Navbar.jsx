@@ -16,6 +16,10 @@ export default function Navbar() {
         navigate("/")
     }
 
+    const signuproute = async ()=>{
+      navigate("/Signup");
+    }
+
     onAuthStateChanged(auth, (currentUser)=>{
       // if(!currentUser){}
       setUser(currentUser)
@@ -38,9 +42,7 @@ export default function Navbar() {
         {/* <div>{user?.email}</div> */}
         <div className="d-flex gap-3">
           {/* <Link to="/Signup"> */}
-          <button className="bg-primary button-1" onClick={() => {
-                navigate("/Signup");
-              }}>Signup</button>
+          {/* <button className="bg-primary button-1" onClick={signuproute}>Signup</button> */}
           {/* </Link> */}
           <button className="bg-primary button-2" onClick={logout}>Logout</button>
         </div>
