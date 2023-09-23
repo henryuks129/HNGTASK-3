@@ -3,6 +3,7 @@ import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndP
 import { useRef, useState } from "react";
 import { Card, Button, Form, Alert } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
+import '../styles/Signin.css'
 
 export default function Signin() {
   const [email, setEmail] = useState("");
@@ -25,8 +26,8 @@ export default function Signin() {
   };
 
   return (
-    <div>
-      <div>
+    <div className="container sigin-inner-main">
+      <div className="signin-inner">
         <Card>
           <Card.Body>
             <h2 className="text-center mb-4">Sign In</h2>
@@ -42,7 +43,7 @@ export default function Signin() {
                   required
                 />
               </Form.Group>
-              <Form.Group controlId="Password">
+              <Form.Group controlId="Password" className="mt-3">
                 <Form.Label>
                   <b>Password:</b>
                 </Form.Label>
@@ -52,7 +53,7 @@ export default function Signin() {
                   required
                 />
               </Form.Group>
-              <Button disabled={loading} type="Submit" className="w-100">
+              <Button disabled={loading} type="Submit" className="w-100 mt-4 mb-2">
                 Login
               </Button>
             </Form>

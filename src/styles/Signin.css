@@ -1,0 +1,12 @@
+.sigin-inner-main{
+    /* width: 100%; */
+    max-width: 600px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+.signin-inner{
+    /* align-items: center; */
+}
